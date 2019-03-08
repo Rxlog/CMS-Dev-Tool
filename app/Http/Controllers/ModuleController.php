@@ -81,8 +81,10 @@ class ModuleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Module $module)
     {
-        //
+        $module->update(['IsEnabled' => 0]);
+
+        return back();
     }
 }

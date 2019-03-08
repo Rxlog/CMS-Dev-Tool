@@ -8,7 +8,11 @@ class Module extends Model
 {
     protected $table="Settings.Module";
     protected $primaryKey = 'ModuleId';
+    protected $guarded = ['ModuleId'];
+
     const CREATED_AT = 'CreatedOn';
+    const UPDATED_AT = 'ModifiedOn';
+    public $timestamps = false;
 
     public function moduleActions()
     {

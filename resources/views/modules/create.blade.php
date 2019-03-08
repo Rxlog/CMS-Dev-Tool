@@ -30,7 +30,7 @@
 
         </div>
         <div class="col-sm-6">
-
+            <module-tree></module-tree>
         </div>
     </div>
 </div>

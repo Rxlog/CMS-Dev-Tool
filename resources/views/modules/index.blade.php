@@ -13,8 +13,9 @@
                     <tr>
                         <th scope="col">DESCRIPTION</th>
                         <th scope="col">TYPE</th>
-                        <th scope="col">URL</th>
-                        <th scope="col">ACTIONS</th>
+                        <th scope="col">Redirect URL</th>
+                        <th scope="col">Enabled</th>
+                        <th scope="col">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -23,9 +24,15 @@
                             <td>{{ $module->Name }}</td>
                             <td>{{ $module->ModuleType }}</td>
                             <td>{{ $module->RedirectURL }}</td>
-                            <td>
-                                <button class="btn btn-link">Edit</button> |
-                                <button class="btn btn-link">Delete</button>
+                            <td>{{ $module->IsEnabled }}</td>
+                            <td class="d-flex justify-content-center">
+                                <button class="btn btn-link">Edit</button>
+                                <form method="POST" action="{{ route('modules.destroy', $module->getKey()) }}">
+                                    @csrf
+                                    @method('DELETE')
+
+                                    <button type="submit" class="btn btn-link">Disable</button>
+                                </form>
                             </td>
                         </tr>
                     @endforeach
