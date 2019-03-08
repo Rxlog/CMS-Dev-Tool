@@ -16,7 +16,7 @@ class ModuleAction extends Model
 
     public function action()
     {
-        return $this->hasOne(Actions::class, 'ActionId', 'ActionId');
+        return $this->hasOne(Action::class, 'ActionId', 'ActionId');
     }
 
     public function moduleEndPoints()
@@ -26,6 +26,6 @@ class ModuleAction extends Model
 
     public function subModuleActions()
     {
-        return $this->hasMany(SubModuleActions::class, 'ModuleActionId', 'ModuleActionId');
+        return $this->hasMany(SubModuleAction::class, 'ModuleActionId', 'ModuleActionId');
     }
 }

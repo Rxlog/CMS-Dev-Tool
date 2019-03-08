@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class SubModuleActions extends Model
+class SubModuleAction extends Model
 {
     protected $table = "Settings.SubModuleActions";
     protected $primaryKey = 'SubModuleActionId';
@@ -16,6 +16,6 @@ class SubModuleActions extends Model
 
     public function subModuleAction()
     {
-        return $this->hasOne(SubActions::class, 'SubActionId', 'SubActionId');
+        return $this->hasOne(SubAction::class, 'SubActionId', 'SubActionId');
     }
 }

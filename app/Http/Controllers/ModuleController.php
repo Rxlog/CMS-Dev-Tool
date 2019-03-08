@@ -15,7 +15,7 @@ class ModuleController extends Controller
      */
     public function index()
     {
-        $modules = Module::with('moduleActions')->get();
+        $modules = Module::withCount('moduleActions')->latest()->paginate(15);
 
         return view('modules.index', compact('modules'));
     }
@@ -27,7 +27,7 @@ class ModuleController extends Controller
      */
     public function create()
     {
-        //
+        return view('modules.create');
     }
 
     /**

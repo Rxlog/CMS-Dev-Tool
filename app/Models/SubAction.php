@@ -11,11 +11,11 @@ class SubActions extends Model
 
     public function mainAction()
     {
-        return $this->belongsTo(Actions::class, 'MainActionid', 'ActionId');
+        return $this->belongsTo(Action::class, 'MainActionid', 'ActionId');
     }
 
     public function subModuleActions()
     {
-        return $this->hasMany(SubModuleActions::class, 'SubActionId', 'SubActionId');
+        return $this->hasMany(SubModuleAction::class, 'SubActionId', 'SubActionId');
     }
 }

@@ -8,6 +8,7 @@ class Module extends Model
 {
     protected $table="Settings.Module";
     protected $primaryKey = 'ModuleId';
+    const CREATED_AT = 'CreatedOn';
 
     public function moduleActions()
     {
