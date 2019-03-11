@@ -30,6 +30,7 @@
 
         </div>
         <div class="col-sm-5 offset-sm-1">
+            <h3>Select parent (optional):</h3>
             <module-tree></module-tree>
         </div>
     </div>

@@ -1771,31 +1771,21 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 Vue.use(liquor_tree__WEBPACK_IMPORTED_MODULE_0__["default"]);
 /* harmony default export */ __webpack_exports__["default"] = ({
-  mounted: function mounted() {
-    console.log('Component mounted.');
-  },
   data: function data() {
     return {
-      items: [{
-        text: 'Item 1'
-      }, {
-        text: 'Item 2'
-      }, {
-        text: 'Item 3',
-        children: [{
-          text: 'Item 3.1'
-        }, {
-          text: 'Item 3.2'
-        }]
-      }],
-      options: {
-        checkbox: true
-      }
+      items: this.renderTree()
     };
+  },
+  methods: {
+    renderTree: function renderTree() {
+      return axios.get('/modules/tree').then(function (_ref) {
+        var data = _ref.data;
+        return data;
+      });
+    }
   }
 });
 
@@ -36862,10 +36852,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("tree", {
-    ref: "tree",
-    attrs: { data: _vm.items, options: _vm.options }
-  })
+  return _c("tree", { ref: "tree", attrs: { data: _vm.items } })
 }
 var staticRenderFns = []
 render._withStripped = true

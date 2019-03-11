@@ -15,6 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('modules/tree', 'ModuleTreeController')->name('modules.tree');
 Route::resource('modules', 'ModuleController');
 
 Auth::routes();
