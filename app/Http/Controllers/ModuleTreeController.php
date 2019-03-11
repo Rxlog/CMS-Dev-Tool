@@ -3,22 +3,22 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Module;
 
 class ModuleTreeController extends Controller
 {
     /**
-     * Handle the incoming request.
+     * Render modules tree
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @link https://github.com/amsik/liquor-tree
+     * @return json
      */
-    public function __invoke(Request $request)
+    public function __invoke()
     {
-        return [
-            [ 'text' => 'Item 1' ],
-            [ 'text' => 'Item 2' ],
-            [ 'text' => 'Item 3', 'state' => [ 'selected' => true ] ],
-            [ 'text' => 'Item 4' ]
-        ];
+        $modules = Module::get()->map(function ($module) {
+            return ['text' => $module->Description];
+        });
+
+        return $modules;
     }
 }
