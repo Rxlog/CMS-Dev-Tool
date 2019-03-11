@@ -29,7 +29,7 @@
             </form>
 
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-5 offset-sm-1">
             <module-tree></module-tree>
         </div>
     </div>
